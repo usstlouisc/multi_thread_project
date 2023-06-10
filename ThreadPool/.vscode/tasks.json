@@ -1,0 +1,73 @@
+{
+    "tasks": [
+        {
+            "type": "cppbuild",
+            "label": "C/C++: clang++ 生成活动文件",
+            "command": "/usr/bin/clang++",
+            "args": [
+                "-std=c++11",
+                "-stdlib=libc++",
+                "-fcolor-diagnostics",
+                "-fansi-escape-codes",
+                "-g",    //-g是可执行程序包含调试信息     
+                //"${file}",      //指明要编译的是当前文件（一般是很多源文件）
+                "${workspaceFolder}/*.cpp",    //指明编译的是当前工程下所有的cpp文件
+                "${workspaceFolder}/ThreadQueue/*.cpp",
+                "${workspaceFolder}/ThreadManager/*.cpp",
+                "${workspaceFolder}/Pool/*.cpp",
+                "${workspaceFolder}/FunWrapper/*.cpp",
+                "-I",
+                "${workspaceFolder}/",
+                "-I",
+                "${workspaceFolder}/ThreadQueue/",            //头文件路径最后的斜杠还是要加的   
+                "-I",
+                "${workspaceFolder}/Pool/",
+                "-I",
+                "${workspaceFolder}/ThreadManager/",
+                "-I",
+                "${workspaceFolder}/FunWrapper/",
+                "-I",
+                "/usr/local/mysql/include/",
+                "-L",
+                "/usr/local/mysql/lib",
+                "-lmysqlclient","-lmysqlservices","-lssl.1.1","-lcrypto.1.1",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}",
+                "&&",
+                "${fileDirname}/${fileBasenameNoExtension}"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "调试器生成的任务。"
+        }
+    ],
+    "version": "2.0.0"
+}
+
+
+// "args": [                              
+//     "-std=c++17",
+//     "-stdlib=libc++",
+//     "-fcolor-diagnostics",
+//     "-fansi-escape-codes",      
+//     "-g",                                 //生成和调试相关的信息
+//     "${workspaceFolder}/*.cpp",
+//     "-I",
+//     "/usr/local/mysql/include",           //-I(大写I) 包含库目录
+//     "-L",                                 //大写L  增加静态库目录
+//     "/usr/local/mysql/lib",                   
+//     "-lmysqlclient","-lmysqlservices","-lssl.1.1","-lcrypto.1.1",
+//     "-o",
+//     "${fileDirname}/${fileBasenameNoExtension}",
+//     "&&",
+//     "${fileDirname}/${fileBasenameNoExtension}"               
+//     //"-lib"
+// ],

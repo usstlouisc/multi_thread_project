@@ -1,0 +1,27 @@
+
+{
+    "C_Cpp.default.cppStandard": "c++11",
+    "C_Cpp.default.cStandard": "c11",
+    "files.associations": 
+    {
+        "atomic": "cpp",
+        "vector": "cpp",
+        "__string": "cpp",
+        "condition_variable": "cpp"
+    },
+    "C_Cpp.default.compilerArgs": [
+        "-g",
+        "${workspaceFolder}/*.cpp",    //指明编译的是当前工程下所有的cpp文件
+        "${workspaceFolder}/ThreadQueue/*.cpp",
+        "${workspaceFolder}/ThreadManager/*.cpp",
+        "${workspaceFolder}/Pool/*.cpp",
+        "${workspaceFolder}/FunWrapper/*.cpp",
+        "-std=c++17",
+		"-o",
+		"${fileDirname}/${fileBasenameNoExtension}"
+    ]
+   
+}
+
+    
+    
