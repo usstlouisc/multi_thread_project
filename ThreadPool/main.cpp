@@ -25,7 +25,7 @@ int main()
     future<int>fut=pool.submit(f);
     cout<<fut.get()<<endl;    
     pool.Stop();
-    cout<<"end"<<endl;
-    //commit
+    cout<<"test alter code"<<endl;
+    cout<<"test again github";
     
 }
