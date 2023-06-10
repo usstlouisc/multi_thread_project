@@ -24,11 +24,6 @@ int main()
     auto f=bind(JJ,2,6);
     future<int>fut=pool.submit(f);
     cout<<fut.get()<<endl;    
-    pool.Stop();
-    cout<<"test alter code"<<endl;
-    cout<<"test again github";
-    for(int i=0;i<2;i++){
-        cout<<"lxl"<<endl;
-    }
+    pool.Stop(); 
     
 }
